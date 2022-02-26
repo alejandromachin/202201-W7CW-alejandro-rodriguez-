@@ -4,5 +4,6 @@ const actionTypes = {
   logedIn: "loged-In",
   userInfo: "user-info",
   registerUser: "register-user",
+  usernameTaken: "username-taken",
 };
 export default actionTypes;

@@ -14,3 +14,7 @@ export const registerUserAction = (userData) => ({
   type: actionTypes.registerUser,
   userData,
 });
+export const usernameTakenAction = (error) => ({
+  type: actionTypes.usernameTaken,
+  error,
+});
