@@ -6,6 +6,10 @@ const userReducer = (currentState = {}, action = {}) => {
     case actionTypes.userInfo:
       newUser = { ...action.userData };
       break;
+    case actionTypes.usernameTaken:
+      newUser = action.error;
+      break;
+
     default:
       newUser = { ...currentState };
   }
