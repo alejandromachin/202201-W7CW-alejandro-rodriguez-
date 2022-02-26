@@ -17,4 +17,17 @@ describe("Given a userReducer function", () => {
       expect(newState).toEqual(expectedNewState);
     });
   });
+  describe("When it is called with a userInfo no action", () => {
+    test("Then it should return the same state", () => {
+      const currentState = {};
+
+      const action = {
+        type: actionTypes.userInfodas,
+      };
+
+      const newState = userReducer(currentState, action);
+
+      expect(newState).toEqual(currentState);
+    });
+  });
 });
