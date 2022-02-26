@@ -1,6 +1,6 @@
 import actionTypes from "./actionTypes";
 
 export const getLoginAction = (token) => ({
-  action: actionTypes.getLogin,
+  type: actionTypes.getLogin,
   token,
 });

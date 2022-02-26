@@ -6,7 +6,7 @@ describe("Given a getLoginAction function", () => {
     test("Then it should return an object with the action and the token", () => {
       const token = "Im a token";
       const expectedReturn = {
-        action: actionTypes.getLogin,
+        type: actionTypes.getLogin,
         token,
       };
 

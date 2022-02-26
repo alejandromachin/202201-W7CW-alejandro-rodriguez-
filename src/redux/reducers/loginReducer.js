@@ -4,7 +4,7 @@ const loginReducer = (currentToken = {}, action = {}) => {
   let newToken;
   switch (action.type) {
     case actionTypes.getLogin:
-      newToken = { ...action.token };
+      newToken = action.token;
       break;
     default:
       newToken = { ...currentToken };
