@@ -16,11 +16,10 @@ export const loginThunk = (userData) => async (dispatch) => {
 };
 
 export const registerThunk = (userData) => async (dispatch) => {
-  const url = `${process.env.REACT_APP_URL}register/`;
+  const url = `${process.env.REACT_APP_URL}register`;
 
-  const {
-    data: { user },
-  } = await axios.post(url, userData);
+  const { data: userCreated } = await axios.post(url, userData);
+  console.log(userCreated);
 
-  dispatch(registerUserAction(user.name));
+  dispatch(registerUserAction(userCreated.name));
 };
