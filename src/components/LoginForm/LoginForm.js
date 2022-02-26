@@ -1,9 +1,7 @@
 import { useState } from "react";
-import { useSelector } from "react-redux";
 
 const LoginForm = () => {
   const blankFields = { username: "", password: "" };
-  const error = useSelector((state) => state.error);
 
   const [formData, setFormData] = useState(blankFields);
 
@@ -37,9 +35,7 @@ const LoginForm = () => {
           value={formData.password}
           onChange={changeData}
         />
-
         <button type="submit">Add</button>
-        <h3>{error}</h3>
       </form>
     </>
   );
