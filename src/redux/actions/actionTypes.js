@@ -3,5 +3,6 @@ const actionTypes = {
   wrongLogin: "wrong-Login",
   logedIn: "loged-In",
   userInfo: "user-info",
+  registerUser: "register-user",
 };
 export default actionTypes;
