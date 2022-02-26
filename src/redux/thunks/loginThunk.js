@@ -11,4 +11,5 @@ export const loginThunk = (userData) => async (dispatch) => {
   const userInfo = jwtDecode(token);
 
   localStorage.setItem("tokenKey", token);
+  localStorage.setItem("name", userInfo.name);
 };
