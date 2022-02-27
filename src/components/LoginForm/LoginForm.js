@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { loginThunk } from "../../redux/thunks/loginThunk";
+import { RegisterContainer } from "../RegisterForm/RegisterForm";
 
 const LoginForm = () => {
   const blankFields = { username: "", password: "" };
@@ -24,23 +25,25 @@ const LoginForm = () => {
   };
   return (
     <>
-      <form onSubmit={login} noValidate autoComplete="off">
-        <label htmlFor="username">Username: </label>
-        <input
-          type="text"
-          id="username"
-          value={formData.username}
-          onChange={changeData}
-        />
-        <label htmlFor="password">Password: </label>
-        <input
-          type="password"
-          id="password"
-          value={formData.password}
-          onChange={changeData}
-        />
-        <button type="submit">Log in</button>
-      </form>
+      <RegisterContainer>
+        <form onSubmit={login} noValidate autoComplete="off">
+          <label htmlFor="username">Username: </label>
+          <input
+            type="text"
+            id="username"
+            value={formData.username}
+            onChange={changeData}
+          />
+          <label htmlFor="password">Password: </label>
+          <input
+            type="password"
+            id="password"
+            value={formData.password}
+            onChange={changeData}
+          />
+          <button type="submit">Log in</button>
+        </form>
+      </RegisterContainer>
     </>
   );
 };

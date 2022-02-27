@@ -2,6 +2,7 @@ import axios from "axios";
 import jwtDecode from "jwt-decode";
 import {
   registerUserAction,
+  usernameNameAction,
   usernameTakenAction,
 } from "../actions/actionCreator";
 
@@ -16,6 +17,7 @@ export const loginThunk = (userData) => async (dispatch) => {
 
   localStorage.setItem("tokenKey", token);
   localStorage.setItem("name", userInfo.name);
+  dispatch(usernameNameAction(userInfo.name));
 };
 
 export const registerThunk = (userData) => async (dispatch) => {

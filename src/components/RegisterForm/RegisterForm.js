@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { registerThunk } from "../../redux/thunks/loginThunk";
 import styled from "styled-components";
 
-const RegisterContainer = styled.div`
+export const RegisterContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,7 +29,7 @@ const RegisterContainer = styled.div`
       font-family: "Bebas Neue";
       font-size: 20px;
       height: 30px;
-      width: 50px;
+      width: 80px;
       border-radius: 5px;
       background-color: #4295f5;
       border: 1px solid black;
@@ -66,7 +66,7 @@ const RegisterContainer = styled.div`
     }
   }
 `;
-const RegisterForm = () => {
+export const RegisterForm = () => {
   const blankFields = {
     name: "",
     username: "",
@@ -130,11 +130,9 @@ const RegisterForm = () => {
             value={formData.password}
             onChange={changeData}
           />
-          <button type="submit">Log in</button>
+          <button type="submit">Register</button>
         </form>
       </RegisterContainer>
     </>
   );
 };
-
-export default RegisterForm;
