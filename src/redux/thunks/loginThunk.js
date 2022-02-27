@@ -21,9 +21,15 @@ export const loginThunk = (userData) => async (dispatch) => {
 export const registerThunk = (userData) => async (dispatch) => {
   const url = `${process.env.REACT_APP_URL}register`;
 
-  const data = await axios.post(url, userData).catch((error) => {
-    dispatch(usernameTakenAction(error.response.data));
-  });
+  const data = await axios
+    .post(url, userData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    })
+    .catch((error) => {
+      dispatch(usernameTakenAction(error.response.data));
+    });
 
   if (data) {
     dispatch(registerUserAction(data.data.name));

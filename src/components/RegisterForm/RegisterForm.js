@@ -7,6 +7,7 @@ const RegisterForm = () => {
     name: "",
     username: "",
     password: "",
+    picture: "",
   };
   const dispatch = useDispatch();
 
@@ -15,15 +16,25 @@ const RegisterForm = () => {
   const resetForm = () => {
     setFormData(blankFields);
   };
+
   const login = (event) => {
     event.preventDefault();
-    dispatch(registerThunk(formData));
+    const formDataFinal = new FormData();
+    formDataFinal.append("avatar", formData.picture);
+    formDataFinal.append("name", formData.name);
+    formDataFinal.append("username", formData.username);
+    formDataFinal.append("password", formData.password);
+    dispatch(registerThunk(formDataFinal));
     resetForm();
   };
+
   const changeData = (event) => {
     setFormData({
       ...formData,
-      [event.target.id]: event.target.value,
+      [event.target.id]:
+        event.target.type === "file"
+          ? event.target.files[0]
+          : event.target.value,
     });
   };
   return (
@@ -36,6 +47,8 @@ const RegisterForm = () => {
           value={formData.name}
           onChange={changeData}
         />
+        <label htmlFor="picture">Picture: </label>
+        <input type="file" name="file" id="picture" onChange={changeData} />
         <label htmlFor="username">Username: </label>
         <input
           type="text"
