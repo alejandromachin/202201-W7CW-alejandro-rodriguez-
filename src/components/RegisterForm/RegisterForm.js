@@ -36,7 +36,6 @@ const RegisterForm = () => {
           ? event.target.files[0]
           : event.target.value,
     });
-    console.log(event.target.files);
   };
   return (
     <>
