@@ -6,5 +6,6 @@ const actionTypes = {
   registerUser: "register-user",
   usernameTaken: "username-taken",
   usernameName: "username-name",
+  loadUsers: "load-users",
 };
 export default actionTypes;
