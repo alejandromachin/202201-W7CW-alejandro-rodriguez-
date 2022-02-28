@@ -18,3 +18,8 @@ export const usernameTakenAction = (error) => ({
   type: actionTypes.usernameTaken,
   error,
 });
+
+export const usernameNameAction = (name) => ({
+  type: actionTypes.usernameName,
+  name,
+});

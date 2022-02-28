@@ -9,6 +9,9 @@ const userReducer = (currentState = {}, action = {}) => {
     case actionTypes.usernameTaken:
       newUser = action.error;
       break;
+    case actionTypes.usernameName:
+      newUser = { name: action.name };
+      break;
 
     default:
       newUser = { ...currentState };

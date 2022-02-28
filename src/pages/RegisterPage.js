@@ -1,14 +1,23 @@
 import { useSelector } from "react-redux";
-import RegisterForm from "../components/RegisterForm/RegisterForm";
+import styled from "styled-components";
+import { RegisterForm } from "../components/RegisterForm/RegisterForm";
+
+const RegisterDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 const RegisterPage = () => {
   const userData = useSelector((state) => state.userData);
 
   return (
     <>
-      <h1>REGISTER:</h1>
-      {userData && <h2>{userData.message}</h2>}
-      <RegisterForm />
+      <RegisterDiv>
+        <h1>REGISTER:</h1>
+        {userData && <h2>{userData.message}</h2>}
+        <RegisterForm />
+      </RegisterDiv>
     </>
   );
 };
