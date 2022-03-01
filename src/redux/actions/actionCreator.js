@@ -28,3 +28,7 @@ export const loadUsersAction = (users) => ({
   type: actionTypes.loadUsers,
   users,
 });
+
+export const isloggedAction = () => ({
+  type: actionTypes.islogged,
+});

@@ -7,5 +7,6 @@ const actionTypes = {
   usernameTaken: "username-taken",
   usernameName: "username-name",
   loadUsers: "load-users",
+  islogged: "is-logged",
 };
 export default actionTypes;

@@ -45,5 +45,5 @@ export const loadUsersThunk = async (dispatch) => {
 
   const { data } = await axios.get(url);
 
-  dispatch(loadUsersAction(data.users));
+  dispatch(loadUsersAction(data));
 };
