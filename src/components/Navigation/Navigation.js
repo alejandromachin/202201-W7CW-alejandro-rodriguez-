@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -23,18 +24,36 @@ const NavigationDiv = styled.div`
   }
 `;
 const LoginDiv = styled.div`
-  width: 200px;
+  width: 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`;
+const UsersDiv = styled.div`
+  position: flex;
+  width: 100px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 `;
 const Navigation = () => {
+  const islogged = useSelector((state) => state.islogged);
+
   return (
     <>
       <NavigationDiv>
         <Link to={"/home"}>HOME</Link>
         <LoginDiv>
+          <UsersDiv>
+            {islogged && (
+              <>
+                <Link to={"/users"}>USERS</Link> <p>|</p>
+              </>
+            )}
+          </UsersDiv>
+
           <Link to={"/login"}>LOGIN</Link>
           <p>|</p>
           <Link to={"/register"}>REGISTER</Link>

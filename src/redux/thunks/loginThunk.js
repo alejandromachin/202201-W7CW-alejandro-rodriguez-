@@ -1,6 +1,7 @@
 import axios from "axios";
 import jwtDecode from "jwt-decode";
 import {
+  loadUsersAction,
   registerUserAction,
   usernameNameAction,
   usernameTakenAction,
@@ -37,4 +38,12 @@ export const registerThunk = (userData) => async (dispatch) => {
     dispatch(registerUserAction(data.data.name));
     dispatch(usernameTakenAction({ message: "User registered" }));
   }
+};
+
+export const loadUsersThunk = async (dispatch) => {
+  const url = `${process.env.REACT_APP_URL}users`;
+
+  const { data } = await axios.get(url);
+
+  dispatch(loadUsersAction(data));
 };

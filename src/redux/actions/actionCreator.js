@@ -23,3 +23,12 @@ export const usernameNameAction = (name) => ({
   type: actionTypes.usernameName,
   name,
 });
+
+export const loadUsersAction = (users) => ({
+  type: actionTypes.loadUsers,
+  users,
+});
+
+export const isloggedAction = () => ({
+  type: actionTypes.islogged,
+});

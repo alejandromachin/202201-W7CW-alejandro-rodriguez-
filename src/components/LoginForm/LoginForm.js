@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { isloggedAction } from "../../redux/actions/actionCreator";
 import { loginThunk } from "../../redux/thunks/loginThunk";
 import { RegisterContainer } from "../RegisterForm/RegisterForm";
 
@@ -15,6 +16,8 @@ const LoginForm = () => {
   const login = (event) => {
     event.preventDefault();
     dispatch(loginThunk(formData));
+    dispatch(isloggedAction());
+
     resetForm();
   };
   const changeData = (event) => {
